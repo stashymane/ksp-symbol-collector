@@ -1,0 +1,36 @@
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+
+plugins {
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.publish)
+    id("signing")
+}
+
+@OptIn(ExperimentalWasmDsl::class)
+kotlin {
+    jvm()
+
+    mingwX64()
+    linuxX64()
+    linuxArm64()
+
+    js {
+        nodejs()
+        browser()
+    }
+    wasmJs()
+    wasmWasi()
+
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
+    macosX64()
+    macosArm64()
+
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    watchosDeviceArm64()
+    watchosSimulatorArm64()
+}

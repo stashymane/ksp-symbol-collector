@@ -16,8 +16,13 @@ kotlin {
         browser()
     }
 
-    wasmJs()
-    wasmWasi()
+    wasmJs {
+        browser()
+        d8()
+    }
+    wasmWasi {
+        nodejs()
+    }
 
     iosX64()
     iosArm64()

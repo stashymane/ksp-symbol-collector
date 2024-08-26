@@ -43,7 +43,8 @@ class Bar
 `symbols/Symbols.kt`
 
 ```kotlin
-val allClasses: Collection<kotlin.reflect.KClass<*>> = listOf(Foo::class, Bar::class)
+val allClasses: Collection<kotlin.reflect.KClass<*>> =
+    listOf(Foo::class, Bar::class)
 ```
 
 </td>

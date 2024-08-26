@@ -10,5 +10,8 @@ buildscript {
     }
 }
 
-group = "dev.stashy"
-version = "1.0-SNAPSHOT"
+allprojects {
+    group = "dev.stashy.symcollector"
+    version = "0.1.0"
+}
+

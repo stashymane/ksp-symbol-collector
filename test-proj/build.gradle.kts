@@ -34,6 +34,10 @@ dependencies {
     }
 }
 
+/*
+    The snippet below only works when there is more than one target. The KMP plugin does not create the commonMain task otherwise.
+    This should ideally be fixed by the KSP plugin, so that the common module is included in all builds, but for now we need a workaround.
+*/
 tasks.withType<KotlinCompilationTask<*>>().configureEach {
     val target = "kspCommonMainKotlinMetadata"
     if (name != target)

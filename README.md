@@ -43,7 +43,7 @@ class Bar
 `symbols/Symbols.kt`
 
 ```kotlin
-val allClasses: Collection<kotlin.reflect.KClass<*>> =
+val allClasses: Collection<KClass<*>> =
     listOf(Foo::class, Bar::class)
 ```
 
@@ -53,10 +53,20 @@ val allClasses: Collection<kotlin.reflect.KClass<*>> =
 
 ## Map example
 
-### Input
+<table>
+<tr>
+<th>Input</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
 
 ```kotlin
-@CollectSymbols("symbolMap", type = CollectSymbols.Type.MapByProperty, property = "name")
+@CollectSymbols(
+    "symbolMap",
+    type = CollectSymbols.Type.MapByProperty,
+    property = "name"
+)
 annotation class CollectToMap(val name: String)
 
 @CollectToMap("foo-class")
@@ -66,14 +76,19 @@ class Foo
 class Bar
 ```
 
-### Output
+</td>
+<td>
 
 `symbols/Symbols.kt`
 
 ```kotlin
-val second: Map<String, kotlin.reflect.KClass<*>> = mapOf(
-    "foo-class" to Foo::class,
-    "bar-class" to Bar::class
-)
-
+val symbolMap: Map<String, KClass<*>> =
+    mapOf(
+        "foo-class" to Foo::class,
+        "bar-class" to Bar::class
+    )
 ```
+
+</td>
+</tr>
+</table>

@@ -16,7 +16,9 @@ Originally made for helping with serialization without reflection.
 Check out the `test-proj` module for a Kotlin Multiplatform example on how to set everything up.
 Setup for Kotlin JVM is just like any other KSP project.
 
-## List example
+## Examples
+
+**Note** - these examples are abbreviated to look good, generated code looks a bit less appealing
 
 <table>
 <tr>
@@ -51,7 +53,6 @@ val allClasses: Collection<KClass<*>> =
 </tr>
 </table>
 
-## Map example
 
 <table>
 <tr>
@@ -64,15 +65,15 @@ val allClasses: Collection<KClass<*>> =
 ```kotlin
 @CollectSymbols(
     "symbolMap",
-    type = CollectSymbols.Type.MapByProperty,
+    type = Type.MapByProperty,
     property = "name"
 )
-annotation class CollectToMap(val name: String)
+annotation class ToMap(val name: String)
 
-@CollectToMap("foo-class")
+@ToMap("foo-class")
 class Foo
 
-@CollectToMap("bar-class")
+@ToMap("bar-class")
 class Bar
 ```
 
